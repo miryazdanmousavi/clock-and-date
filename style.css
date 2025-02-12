@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url('fonts/digital-7.ttf') format('truetype');
+
+}
+
+body {
+    background-color: #003049;
+    direction: ltr;
+    text-align: center;
+}
+
+#digital_clock {
+    font-family: 'Digital-7', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    color: #fff;
+    font-size: 60px;
+}
+
+#digital_clock > div {
+    margin: 0 20px;
+}
+
+
+/* analog Quartz clock */
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 15px solid #9b0b23;
+    border-radius: 50%;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    margin: 30px auto;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* Fix for the hands positioning */
+}
+
+.hand {
+    width: 50%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+    height: 6px;
+    background: #0a0908;
+    border-radius: 5px;
+}
+
+.minute-hand {
+    height: 4px;
+    background: #1e1e24;
+    border-radius: 5px;
+}
+
+.second-hand {
+    height: 2px;
+    background: red;
+    border-radius: 5px;
+}
+
+.number {
+    position: absolute;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+}
+
+.number1  { top: 15%; left: 78%; }
+.number2  { top: 30%; left: 92%; }
+.number3  { top: 50%; left: 97%; }
+.number4  { top: 70%; left: 92%; }
+.number5  { top: 85%; left: 75%; }
+.number6  { top: 95%; left: 50%; }
+.number7  { top: 85%; left: 25%; }
+.number8  { top: 70%; left: 8%; }
+.number9  { top: 50%; left: 3%; }
+.number10 { top: 30%; left: 8%; }
+.number11 { top: 15%; left: 22%; }
+.number12 { top: 5%; left: 50%; }
+
+/* numeric-date */
+#numeric-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-top: 30px;
+}
+
+/* description */
+#description {
+    text-align: center;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    #digital_clock {
+        font-size: 40px;
+    }
+
+    #digital_clock > div {
+        margin: 0 10px;
+    }
+
+    .clock {
+        width: 270px;
+        height: 270px;
+    }
+
+    #numeric-date {
+        font-size: 30px;
+    }
+    #description {
+        font-size: 16px;
+    }
+}
